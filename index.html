@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Materiales Los Guayos</title>
+    {% load static %}
+<link rel="stylesheet" href="style.css?v=1"/>
+</head>
+
+<body>
+    <header>
+        <h1>Materiales<br>Los Guayos</h1>
+        <img src="{% static 'images/logo.png' %}" alt="Logo de la ferretería">
+
+        <!-- BARRA DE BÚSQUEDA -->
+        <section class="search-container">
+                <input type="search" class="search"  placeholder="¿Cuál herramienta te interesa?" maxlength="100" autocomplete="off"/>
+        </section>
+
+        <!-- BOTÓN AL CHAT DE WHATSAPP -->
+            <a href="https://wa.me/584127402128" target="_blank" class="btn-chat">
+                <img src="chat.png" alt="chat de whatsapp" class="ws-img">
+            </a>
+
+        <!-- BOTÓN DE CARRITO DE COMPRAS -->
+        <button class="cart-btn" id="open-cart-btn">
+            <img src="cart.png" alt="carrito de compras" class="cart-img"> <span class="cart-badge">3</span> <!-- Contador de productos (agregar la img.png) -->
+        </button>
+
+        <!-- MENÚ DEL CARRITO -->
+        <div class="side-cart" id="side-cart">
+            <div class="cart-header">
+                <h3>Tu Carrito</h3>
+                <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+            </div>
+            
+            <!-- Cuerpo donde Django listará los productos -->
+            <div class="cart-body">
+                <p>Productos agregados</p>
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-total">Total: $0.00</div>
+                <button class="checkout-btn">Proceder al pago</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+           <!-- ================= CARRUSEL ================= -->
+        <section class="carrusel-container">
+            <div class="carrusel">
+                {% for banner in banners %}
+                    <div class="carrusel-item">
+                        <!-- Las imágenes que subes desde el panel de administración usan .url -->
+                        <img src="{{ banner.imagen.url }}" alt="{{ banner.titulo }}">
+                    </div>
+                {% empty %}
+                    <!-- Esto se muestra solo si no has subido banners en el panel -->
+                    <p>¡Bienvenidos a Materiales Los Guayos! Consulta nuestras ofertas abajo.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- ================= CATÁLOGO DE PRODUCTOS Y STOCK (DINÁMICO) ================= -->
+        <section class="productos-container">
+            <h2>Nuestras Herramientas y Materiales</h2>
+            <div class="grid-productos">
+                {% for producto in productos %}
+                    <div class="tarjeta-producto">
+                        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                        <h3>{{ producto.nombre }}</h3>
+                        <p class="precio">$. {{ producto.precio }}</p>
+
+                        <!-- Control de Stock de la ferretería en tiempo real -->
+                        {% if producto.stock == 0 %}
+                            <span class="badge agotado">Agotado temporalmente</span>
+                            <button class="btn" disabled>Sin Stock</button>
+                        {% elif producto.stock <= 10 %}
+                            <!-- Alerta de pocas unidades -->
+                            <span class="badge alerta">¡Últimas  {{ producto.stock }} unidades!</span>
+                            <button class="btn btn-comprar">Añadir al carrito</button>
+                        {% else %}
+                            <p class="stock-disponible">Disponible: {{ producto.stock }} unidades.</p>
+                            <button class="btn btn-comprar">Añadir al carrito</button>
+                        {% endif %}
+                    </div>
+                {% empty %}
+                    <p>No hay productos disponibles en este momento.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- ================= UBICACIÓN ================= -->
+        <section class="ubicacion">
+            <h2>Encuéntranos en Los Guayos</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1072.33411513868!2d-67.93879545931095!3d10.188070491314765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2sve!4v1789858473698!5m2!1ses-419!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>   </main>
+
+    <footer>
+        <h4>Información fiscal<br>Ferretería Los Guayos C.A.<br>RIF: J-000000-2<br>C. Libertad<br>Los Guayos, Edo. Carabobo</h4>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
