@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hids%%k#vrmq*1knb5bqeydc)6qc$ps$6hs6fdeiqx#9h=!b8-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['://materiales-los-guayos.onrender.com', '127.0.0.1', 'localhost', '*']
 
 
 # Application definition
