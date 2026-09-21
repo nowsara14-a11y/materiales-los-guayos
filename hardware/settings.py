@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hardware'
 ]
 
 MIDDLEWARE = [
@@ -85,6 +86,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Storage para iti WhiteNoise
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },

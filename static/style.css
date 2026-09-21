@@ -15,11 +15,18 @@
 }
 
 .encabezado {
-    margin-top: 90px;
+    margin-top: 0px;
+    position: fixed;
+    width: 98%;
+    height: 150px;
+    border-radius: 15px;
+    background-color: hsl(209, 57%, 46%);
+    box-sizing: border-box;
 }
 
 .search {
-    top: 20px;
+    align-items: center;
+    top: 90px;
     position: fixed;
     width: 90%;
     align-items: center;
@@ -30,7 +37,7 @@
     border-radius: 20px;
     box-sizing: border-box;
     display: block;
-    background-color: hwb(0 55% 45% / 0.568);
+    background-color: oklch(87.925% 0.00437 15.982);
 }
 
 .user-img {
