@@ -11,7 +11,7 @@
     overflow-x: hidden;
 */
 :root {
-    --border: hsl(271, 91%, 55%);
+    --borderr: hsl(271, 91%, 55%);
 }
 
 .encabezado {
@@ -30,12 +30,13 @@
     border-radius: 20px;
     box-sizing: border-box;
     display: block;
+    background-color: hwb(0 55% 45% / 0.568);
 }
 
 .user-img {
     position:fixed;
     bottom: 95px;
-    right: 2.6%;
+    right: 18px;
     z-index: 1000;
     display: inline-block;
     width: 68px;
@@ -46,7 +47,7 @@
 .user-btn {
     position: fixed;
     bottom: 200px;
-    right: 3%;
+    right: 20px;
     z-index: 999;
     display: inline-block;
 
@@ -55,7 +56,7 @@
     background-color: #fff;
     position: fixed;
     bottom: 174px;
-    right: 3%;
+    right: 18px;
     z-index: 1000;
     display: inline-block;
     width: 60px;
@@ -67,7 +68,7 @@
 .btn-chat {
     position: fixed;
     bottom: 15px;
-    right: 3%;
+    right: 18px;
     z-index: 1000;
     display: inline-block;
 }
@@ -82,7 +83,7 @@
 .cart-btn {
     position: fixed;
     bottom: 200px;
-    right: 3%;
+    right: 20px;
     z-index: 999;
     display: inline-block;
 }
@@ -116,7 +117,7 @@
     top: 0;
     right: -400px; /* Lo esconde completamente a la derecha fuera de la pantalla */
     width: 350px;
-    height: 96vh;
+    bottom: 95px;
     background: #ffffff;
     box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     z-index: 2000; /* Por encima del botón de WhatsApp */
