@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hids%%k#vrmq*1knb5bqeydc)6qc$ps$6hs6fdeiqx#9h=!b8-'
 
 # Iti puyat/development, mabalin a gawiem a True tapno nalakat a makita ti biddut
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['materiales-los-guayos.onrender.com', '127.0.0.1', 'localhost', '*']
 
