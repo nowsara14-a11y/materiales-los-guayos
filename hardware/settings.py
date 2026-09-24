@@ -103,3 +103,22 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+import os
+from django.db.models.signals import post_migrate
+from django.dispatch import receiver
+
+@receiver(post_migrate)
+def create_default_superuser(sender, **kwargs):
+    if sender.name == 'hardware':  # O el nombre exacto de tu app principal
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
+        
+        username = os.environ.get('administracion')
+        email = os.environ.get('nowsara14@gmail.com')
+        password = os.environ.get('sara,01122009.')
+        
+        if username and password:
+            if not User.objects.filter(username=username).exists():
+                User.objects.create_superuser(username=username, email=email, password=password)
+                print(f"Superusuario '{username}' creado exitosamente.")
