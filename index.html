@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="encabezado">
-            <h1>|                           Materiales Los Guayos</h1>
+            <h1>Materiales Los Guayos</h1>
             <img src="{% static 'logo.png' %}" alt="Logo de la ferretería">
         </div>
         <!-- BARRA DE BÚSQUEDA -->
@@ -62,7 +62,7 @@
                         <img src="{{ banner.imagen.url }}" alt="{{ banner.titulo }}">
                     </div>
                 {% empty %}
-                    <p>¡Bienvenidos a Materiales Los Guayos! Consulta nuestras ofertas abajo.</p>
+                    <p class="Bienvenida">¡Bienvenidos a Materiales Los Guayos! Consulta nuestras ofertas abajo.</p>
                 {% endfor %}
             </div>
         </section>

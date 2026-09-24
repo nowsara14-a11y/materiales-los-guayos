@@ -10,34 +10,61 @@
     font-family: 'Abhaya Libre', serif;
     overflow-x: hidden;
 */
-:root {
-    --borderr: hsl(271, 91%, 55%);
+
+.Bienvenida {
+    font-size: 20px;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: hsl(175, 23%, 10%);
+    background-color: #8eb69b;
+    overflow-x: hidden;
+}
+
+:root {
+    --border: 3px solid #539e7b; /* Definida la variable para que no falle */
+}
+
+.productos-container {
+    margin-top: 30px;
+}
+
+.Bienvenida{
+    margin-top: 160px;
+}
 .encabezado {
-    margin-top: 0px;
+    color: #daf1de;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
     position: fixed;
-    width: 98%;
-    height: 150px;
-    border-radius: 15px;
-    background-color: hsl(209, 57%, 46%);
+    width: 100%;
+    height: 145px;
+    background-color: #235347;
     box-sizing: border-box;
+    z-index: 100;
 }
 
 .search {
-    align-items: center;
-    top: 90px;
+    top: 70px;
     position: fixed;
-    width: 90%;
-    align-items: center;
+    width: 98%;
     height: 60px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0 15px;
     font-size: 16px;
-    border: 3px var(--border);
+    border: var(--border);
     border-radius: 20px;
     box-sizing: border-box;
     display: block;
-    background-color: oklch(87.925% 0.00437 15.982);
+    z-index: 101;
 }
 
 .user-img {
@@ -180,4 +207,5 @@
     border-radius: 20px;
     border: 3px;
     border-color: var(--border);
+    justify-content: center;
 }
