@@ -10,7 +10,6 @@
     font-family: 'Abhaya Libre', serif;
     overflow-x: hidden;
 */
-
 html, body {
     margin: 8px;
     padding: 0;
@@ -31,7 +30,7 @@ body {
 }
 
 .Bienvenida{
-    margin-top: 160px;
+    margin-top: 120px;
 }
 
 .encabezado {
@@ -208,7 +207,7 @@ body {
     border-radius: 20px;
     margin-right: 8px;
     margin-left: none;
-    height: 500px;
+    height: 400px;
     width: 100%;
     max-width: 100%;
 }
